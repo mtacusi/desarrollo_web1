@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador Integral de Triángulos</title>
+    
+</head>
+<body>
+    <header>
+        <h1>Calculador Integral de Triángulos</h1>
+    </header>
+    <main>
+        <section>
+            <label for="ladoA">Lado A:</label>
+            <input type="number" id="ladoA" placeholder="Ingresa el lado A" required>
+            
+            <label for="ladoB">Lado B:</label>
+            <input type="number" id="ladoB" placeholder="Ingresa el lado B" required>
+            
+            <label for="ladoC">Lado C:</label>
+            <input type="number" id="ladoC" placeholder="Ingresa el lado C" required>
+
+            <button id="calcular">Calcular</button>
+        </section>
+        
+        <div id="resultados">
+            <div class="resultado" id="perimetro">
+                <h2>Perímetro</h2>
+                <p id="valorPerimetro">-</p>
+            </div>
+            <div class="resultado" id="area">
+                <h2>Área</h2>
+                <p id="valorArea">-</p>
+            </div>
+            <div class="resultado" id="angulos">
+                <h2>Ángulos</h2>
+                <p id="valorAngulos">-</p>
+            </div>
+            <div class="resultado" id="medianas">
+                <h2>Medianas</h2>
+                <p id="valorMedianas">-</p>
+            </div>
+            <div class="resultado" id="bisectrices">
+                <h2>Bisectrices</h2>
+                <p id="valorBisectrices">-</p>
+            </div>
+            <div class="resultado" id="alturas">
+                <h2>Alturas</h2>
+                <p id="valorAlturas">-</p>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

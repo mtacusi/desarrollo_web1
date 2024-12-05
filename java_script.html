@@ -1,0 +1,36 @@
+<script>
+document.getElementById('calcular').addEventListener('click', () => {
+    const ladoA = parseFloat(document.getElementById('ladoA').value);
+    const ladoB = parseFloat(document.getElementById('ladoB').value);
+    const ladoC = parseFloat(document.getElementById('ladoC').value);
+
+    if (ladoA > 0 && ladoB > 0 && ladoC > 0) {
+        // Perímetro
+        const perimetro = ladoA + ladoB + ladoC;
+
+        // Semiperímetro para el área
+        const s = perimetro / 2;
+
+        // Área usando la fórmula de Herón
+        const area = Math.sqrt(s * (s - ladoA) * (s - ladoB) * (s - ladoC));
+
+        // Ángulos usando ley de cosenos
+        const anguloA = Math.acos((Math.pow(ladoB, 2) + Math.pow(ladoC, 2) - Math.pow(ladoA, 2)) / (2 * ladoB * ladoC)) * (180 / Math.PI);
+        const anguloB = Math.acos((Math.pow(ladoA, 2) + Math.pow(ladoC, 2) - Math.pow(ladoB, 2)) / (2 * ladoA * ladoC)) * (180 / Math.PI);
+        const anguloC = 180 - anguloA - anguloB;
+
+        // Median formulas
+        const medianaA = Math.sqrt((2 * Math.pow(ladoB, 2) + 2 * Math.pow(ladoC, 2) - Math.pow(ladoA, 2)) / 4);
+        const medianaB = Math.sqrt((2 * Math.pow(ladoA, 2) + 2 * Math.pow(ladoC, 2) - Math.pow(ladoB, 2)) / 4);
+        const medianaC = Math.sqrt((2 * Math.pow(ladoA, 2) + 2 * Math.pow(ladoB, 2) - Math.pow(ladoC, 2)) / 4);
+
+        // Output results
+        document.getElementById('valorPerimetro').innerText = perimetro.toFixed(2);
+        document.getElementById('valorArea').innerText = area.toFixed(2);
+        document.getElementById('valorAngulos').innerText = `A: ${anguloA.toFixed(2)}°, B: ${anguloB.toFixed(2)}°, C: ${anguloC.toFixed(2)}°`;
+        document.getElementById('valorMedianas').innerText = `Ma: ${medianaA.toFixed(2)}, Mb: ${medianaB.toFixed(2)}, Mc: ${medianaC.toFixed(2)}`;
+    } else {
+        alert('Por favor, introduce valores válidos para los lados.');
+    }
+});
+</script>
